@@ -3,11 +3,13 @@
 // TODO: Rework
 public class CharacterMovement : MonoBehaviour
 {
-    public float Speed = 5f; 
+    public float Speed = 100f; 
 
     private bool isGrounded = true;
     private float speedyTime = 0f;
-    private bool reverseGravity = false;
+    private bool gravityReversed = false;
+    private bool directionReversed = false;
+    private bool invoking = false;
 
     private Rigidbody rBody;
 
@@ -28,14 +30,20 @@ public class CharacterMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rBody.AddForce(new Vector3(Speed, 0, 0));
-        float newVelocityX = Mathf.Clamp(rBody.velocity.x, 0f, 3f); 
+        rBody.AddForce(new Vector3((!directionReversed ? 1 : -1) * Speed, 0, 0));
+         float newVelocityX;
         if(speedyTime <= 0f)
         {
+            newVelocityX = Mathf.Clamp(rBody.velocity.x, -1f, 1f);
             rBody.velocity = new Vector3(newVelocityX, rBody.velocity.y, 0);
         }
-        if(reverseGravity) {
-            rBody.AddForce(Vector3.up * 9.81f);
+        else
+        {
+            newVelocityX = Mathf.Clamp(rBody.velocity.x, -3f, 3f);
+            rBody.velocity = new Vector3(newVelocityX, rBody.velocity.y, 0);
+        }
+        if(gravityReversed) {
+            rBody.AddForce(Vector3.up * 20f);
         }
     }
 
@@ -48,21 +56,28 @@ public class CharacterMovement : MonoBehaviour
 
         // Jump
         Renderer rend = other.gameObject.GetComponent<Renderer>();
-        if(isGrounded && rend.material.color == Color.yellow) 
+        if(!invoking)
         {
-            rBody.AddForce(Vector3.up * 500f);
-            print("Debug Jump");
-        }
-        if(isGrounded && rend.material.color == Color.red) 
-        {
-            speedyTime = 1f;
-            print("Debug Jump");
-        }
-        if(rend.material.color == Color.blue) 
-        {
-            //Physics.gravity = -Physics.gravity;
-            rBody.useGravity = !rBody.useGravity;
-            reverseGravity = !reverseGravity;
+            if(isGrounded && rend.material.color == Color.yellow) 
+            {
+                Invoke("Jump", 0.5f);
+                invoking = true;
+            }
+            if(isGrounded && rend.material.color == Color.red) 
+            {
+                Invoke("IncreaseSpeed", 0.5f);
+                invoking = true;
+            }
+            if(rend.material.color == Color.blue) 
+            {
+                Invoke("ReverseGravity", 0.5f);
+                invoking = true;
+            }
+            if(rend.material.color == Color.green)
+            {
+               Invoke("ReverseDirection", 0.3f);
+                invoking = true;
+            }
         }
     }
 
@@ -79,10 +94,40 @@ public class CharacterMovement : MonoBehaviour
         if(other.gameObject.name == "Win")
         {
             //GameManager.Instance.GameOver();
+            Debug.Log("Win with: " + this.name);
+            gameObject.SetActive(false);
         }
-        if(other.gameObject.name == "Death")
+        if(other.gameObject.name == "Lose")
         {
             //GameManager.Instance.GameOver();
+            Debug.Log("Lost: " + this.name);
+            gameObject.SetActive(false);
         }
+    }
+
+    private void Jump()
+    {
+        rBody.AddForce((!gravityReversed ? Vector3.up : Vector3.down) * 600f);
+        invoking = false;
+    }
+
+
+    private void IncreaseSpeed()
+    {
+        speedyTime = 2f;
+        invoking = false;
+    }
+
+    private void ReverseGravity()
+    {
+        rBody.useGravity = !rBody.useGravity;
+        gravityReversed = !gravityReversed;
+        invoking = false;
+    }
+
+    private void ReverseDirection()
+    {
+        directionReversed = !directionReversed;
+        invoking = false;
     }
 }

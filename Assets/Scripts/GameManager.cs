@@ -7,9 +7,8 @@ public class GameManager : MonoBehaviour
 
     public bool IsGameOver = false;
 
-    private int activeColorIndex = 3;
-    private Color[] colors = new Color[] { Color.yellow, Color.red, Color.green, Color.blue };
-
+    private int activeColorIndex = (int)Colors.Red;
+    private Color[] colors = new Color[] { Color.red, Color.blue, Color.green, Color.yellow };
 
     private void Awake()
     {
@@ -26,10 +25,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
-        {
-            SwitchColor();
-        }
+        
 
         if(Input.GetKeyDown(KeyCode.PageUp))
         {
@@ -57,18 +53,6 @@ public class GameManager : MonoBehaviour
         IsGameOver = false;
     }
 
-    private void SwitchColor()
-    {
-        activeColorIndex++;
-        if (activeColorIndex >= 4)
-        {
-            activeColorIndex = 0;
-        }
-
-        Debug.Log("Active Color is: " + GetActiveColor());
-    }
-
-
     /* 
         Public Actions
     */ 
@@ -93,6 +77,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(nextSceneIndex);
 
         Debug.Log("Loading Scene: " + nextSceneIndex);
+    }
+
+    public void SetActiveColor(Colors color)
+    {
+        activeColorIndex = (int)color;
     }
 
     public Color GetActiveColor()

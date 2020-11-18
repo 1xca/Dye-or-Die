@@ -2,6 +2,8 @@
 
 public class CharacterManager : MonoBehaviour
 {
+    public static CharacterManager Instance = null;
+
     //Assign in UnityEditor
     public GameObject Prefab;
     
@@ -13,6 +15,11 @@ public class CharacterManager : MonoBehaviour
     private GameObject[] characterPool;
     private int currentCharacterIndex = 0;
     private float timeSinceLastSpawn = 0f;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
@@ -44,5 +51,13 @@ public class CharacterManager : MonoBehaviour
             characterPool[currentCharacterIndex].SetActive(true);
             currentCharacterIndex += 1;
         }
+    }
+
+    /* 
+        Public Actions
+    */
+    public void LoseCharacter()
+    {
+        
     }
 }

@@ -13,7 +13,7 @@ public class ColorBevahior : MonoBehaviour
     private void CheckMouse() 
     {
         RaycastHit hit;
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !Colorpicking.IsSlowedDown)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit))
