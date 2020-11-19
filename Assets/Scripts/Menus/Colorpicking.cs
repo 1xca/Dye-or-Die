@@ -14,6 +14,7 @@ public class Colorpicking : MonoBehaviour
         ColorButtons[(int)Colors.Blue].GetComponent<Image>().color = Color.blue;
         ColorButtons[(int)Colors.Green].GetComponent<Image>().color = Color.green;
         ColorButtons[(int)Colors.Yellow].GetComponent<Image>().color = Color.yellow;
+        GameManager.Instance.SetActiveColor(activeColor);
     }
 
     void Update()
@@ -40,8 +41,7 @@ public class Colorpicking : MonoBehaviour
         ColorPickerUI.SetActive(true);
         Time.timeScale = 0.25f;
         IsSlowedDown = true;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.lockState = CursorLockMode.None;
+
         ColorButtons[(int)activeColor].Select();
     }
 

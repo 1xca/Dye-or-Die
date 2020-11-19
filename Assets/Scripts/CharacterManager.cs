@@ -15,6 +15,8 @@ public class CharacterManager : MonoBehaviour
     private GameObject[] characterPool;
     private int currentCharacterIndex = 0;
     private float timeSinceLastSpawn = 0f;
+    private int charactersAlive = 0;
+    private int finishedCharacters = 0;
 
     private void Awake()
     {
@@ -23,6 +25,7 @@ public class CharacterManager : MonoBehaviour
 
     void Start()
     {
+        Amount += GameManager.Instance.GetExtraCharacters();
         spawnPosition = gameObject.transform.position;
         characterPool = new GameObject[Amount];
         
@@ -50,14 +53,23 @@ public class CharacterManager : MonoBehaviour
         {
             characterPool[currentCharacterIndex].SetActive(true);
             currentCharacterIndex += 1;
+            charactersAlive += 1;
         }
     }
 
     /* 
         Public Actions
     */
-    public void LoseCharacter()
+    public void LoseCharacter(bool hasReachedFinish)
     {
-        
+        if(hasReachedFinish)
+        {
+            finishedCharacters += 1;
+        }
+        charactersAlive -= 1;
+        if(charactersAlive <= 0)
+        {
+            GameManager.Instance.GameOver(finishedCharacters);
+        }
     }
 }

@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 
     public bool IsGameOver = false;
 
+    private int extraCharacters = 0;
     private int activeColorIndex = (int)Colors.Red;
     private Color[] colors = new Color[] { Color.red, Color.blue, Color.green, Color.yellow };
 
@@ -25,8 +26,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        
-
         if(Input.GetKeyDown(KeyCode.PageUp))
         {
             NextLevel();
@@ -48,19 +47,25 @@ public class GameManager : MonoBehaviour
     /* 
         Private Actions
     */ 
-    private void ResetGame()
+    public void ResetGame()
     {
         IsGameOver = false;
+        extraCharacters = 0;
     }
 
     /* 
         Public Actions
     */ 
-    public void GameOver()
+    public void GameOver(int alive)
     {
-        IsGameOver = true;
-
-        Debug.Log("Game Over!");
+        if(alive <= 0)
+        {
+            IsGameOver = true;
+            ResetGame();
+            Debug.Log("Game Over!");
+        }
+        extraCharacters = alive;
+        NextLevel();
     }
 
     public void NextLevel() 
@@ -87,6 +92,16 @@ public class GameManager : MonoBehaviour
     public Color GetActiveColor()
     {
         return colors[activeColorIndex];
+    }
+
+    public Colors GetActiveColorIndex()
+    {
+        return (Colors)activeColorIndex;
+    }
+
+    public int GetExtraCharacters()
+    {
+        return extraCharacters;
     }
 }
 

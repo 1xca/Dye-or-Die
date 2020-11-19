@@ -93,15 +93,15 @@ public class CharacterMovement : MonoBehaviour
     {
         if(other.gameObject.name == "Win")
         {
-            //GameManager.Instance.GameOver();
             Debug.Log("Win with: " + this.name);
             gameObject.SetActive(false);
+            CharacterManager.Instance.LoseCharacter(true);
         }
         if(other.gameObject.name == "Lose")
         {
-            //GameManager.Instance.GameOver();
             Debug.Log("Lost: " + this.name);
-            gameObject.SetActive(false);
+            Destroy(gameObject);
+            CharacterManager.Instance.LoseCharacter(false);
         }
     }
 
