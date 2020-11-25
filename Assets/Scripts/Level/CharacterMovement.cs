@@ -10,6 +10,9 @@ public class CharacterMovement : MonoBehaviour
     private bool gravityReversed = false;
     private bool directionReversed = false;
     private bool invoking = false;
+    private GameObject alreadyReactedOn = null;
+    private float reactionTimer = 0f;
+    private bool needsGravity = true;
 
     private Rigidbody rBody;
 
@@ -17,6 +20,7 @@ public class CharacterMovement : MonoBehaviour
     void Start()
     {
         rBody = GetComponent<Rigidbody>();
+        rBody.useGravity = !rBody.useGravity;
     }
 
     // Update is called once per frame
@@ -26,15 +30,29 @@ public class CharacterMovement : MonoBehaviour
         {
             speedyTime -= Time.deltaTime;
         }
+        if(reactionTimer > 0)
+        {
+            reactionTimer -= Time.deltaTime;
+        }
+        else 
+        {
+            alreadyReactedOn = null;
+        }
     }
 
     private void FixedUpdate()
     {
         rBody.AddForce(new Vector3((!directionReversed ? 1 : -1) * Speed, 0, 0));
-         float newVelocityX;
+        if(needsGravity)
+        {
+            
+            rBody.AddForce((gravityReversed ? Vector3.up : Vector3.down) * 20f * rBody.mass);
+        }
+        float newVelocityX;
+        
         if(speedyTime <= 0f)
         {
-            newVelocityX = Mathf.Clamp(rBody.velocity.x, -1f, 1f);
+            newVelocityX = Mathf.Clamp(rBody.velocity.x, -2f, 2f);
             rBody.velocity = new Vector3(newVelocityX, rBody.velocity.y, 0);
         }
         else
@@ -42,12 +60,20 @@ public class CharacterMovement : MonoBehaviour
             newVelocityX = Mathf.Clamp(rBody.velocity.x, -3f, 3f);
             rBody.velocity = new Vector3(newVelocityX, rBody.velocity.y, 0);
         }
-        if(gravityReversed) {
-            rBody.AddForce(Vector3.up * 20f);
+
+        if(rBody.velocity.magnitude >= 14)
+        {
+            needsGravity = false;
+        } 
+        else
+        {
+            needsGravity = true;
         }
+
+        
     }
 
-    private void OnCollisionEnter(Collision other) 
+    private void OnCollisionStay(Collision other) 
     {
         if(other.gameObject.layer == 8) //floor is 8
         {
@@ -56,27 +82,35 @@ public class CharacterMovement : MonoBehaviour
 
         // Jump
         Renderer rend = other.gameObject.GetComponent<Renderer>();
-        if(!invoking)
+        if(!(other.gameObject.Equals(alreadyReactedOn)) && reactionTimer <= 0)
         {
-            if(isGrounded && rend.material.color == Color.yellow) 
+            alreadyReactedOn = other.gameObject;
+            if(!invoking)
             {
-                Invoke("Jump", 0.5f);
-                invoking = true;
-            }
-            if(isGrounded && rend.material.color == Color.red) 
-            {
-                Invoke("IncreaseSpeed", 0.5f);
-                invoking = true;
-            }
-            if(rend.material.color == Color.blue) 
-            {
-                Invoke("ReverseGravity", 0.5f);
-                invoking = true;
-            }
-            if(rend.material.color == Color.green)
-            {
-               Invoke("ReverseDirection", 0.3f);
-                invoking = true;
+                if(isGrounded && rend.material.color == Color.yellow) 
+                {
+                    Invoke("Jump", 0.5f);
+                    invoking = true;
+                    reactionTimer = 0.75f;
+                }
+                if(isGrounded && rend.material.color == Color.red) 
+                {
+                    Invoke("IncreaseSpeed", 0.5f);
+                    invoking = true;
+                    reactionTimer = 0.75f;
+                }
+                if(rend.material.color == Color.blue) 
+                {
+                    Invoke("ReverseGravity", 0.5f);
+                    invoking = true;
+                    reactionTimer = 0.75f;
+                }
+                if(rend.material.color == Color.green)
+                {
+                    Invoke("ReverseDirection", 0f);
+                    invoking = true;
+                    reactionTimer = 0.75f;
+                }
             }
         }
     }
@@ -107,7 +141,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void Jump()
     {
-        rBody.AddForce((!gravityReversed ? Vector3.up : Vector3.down) * 600f);
+        rBody.AddForce((!gravityReversed ? Vector3.up : Vector3.down) * 30000f);
         invoking = false;
     }
 
@@ -120,7 +154,6 @@ public class CharacterMovement : MonoBehaviour
 
     private void ReverseGravity()
     {
-        rBody.useGravity = !rBody.useGravity;
         gravityReversed = !gravityReversed;
         invoking = false;
     }

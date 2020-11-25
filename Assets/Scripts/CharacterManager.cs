@@ -15,8 +15,8 @@ public class CharacterManager : MonoBehaviour
     private GameObject[] characterPool;
     private int currentCharacterIndex = 0;
     private float timeSinceLastSpawn = 0f;
-    private int charactersAlive = 0;
-    private int finishedCharacters = 0;
+    public int charactersAlive = 0;
+    public int finishedCharacters = 0;
 
     private void Awake()
     {
@@ -28,7 +28,8 @@ public class CharacterManager : MonoBehaviour
         Amount += GameManager.Instance.GetExtraCharacters();
         spawnPosition = gameObject.transform.position;
         characterPool = new GameObject[Amount];
-        
+        charactersAlive = Amount;
+
         for(int i = 0; i < Amount; i++)
         {
             GameObject newObject = Instantiate(Prefab, spawnPosition, Quaternion.identity);
@@ -53,7 +54,6 @@ public class CharacterManager : MonoBehaviour
         {
             characterPool[currentCharacterIndex].SetActive(true);
             currentCharacterIndex += 1;
-            charactersAlive += 1;
         }
     }
 

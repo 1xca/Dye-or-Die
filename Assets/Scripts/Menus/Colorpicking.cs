@@ -14,6 +14,7 @@ public class Colorpicking : MonoBehaviour
         ColorButtons[(int)Colors.Blue].GetComponent<Image>().color = Color.blue;
         ColorButtons[(int)Colors.Green].GetComponent<Image>().color = Color.green;
         ColorButtons[(int)Colors.Yellow].GetComponent<Image>().color = Color.yellow;
+        ColorButtons[(int)Colors.none].GetComponent<Image>().color = Color.white;
         GameManager.Instance.SetActiveColor(activeColor);
     }
 
@@ -65,5 +66,6 @@ public enum Colors
     Red,
     Blue,
     Green,
-    Yellow
+    Yellow,
+    none
 }

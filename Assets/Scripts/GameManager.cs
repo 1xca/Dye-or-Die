@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 
     private int extraCharacters = 0;
     private int activeColorIndex = (int)Colors.Red;
-    private Color[] colors = new Color[] { Color.red, Color.blue, Color.green, Color.yellow };
+    private Color[] colors = new Color[] { Color.red, Color.blue, Color.green, Color.yellow, Color.white };
 
     private void Awake()
     {
@@ -39,7 +39,6 @@ public class GameManager : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Space))
             {
                 ResetGame();
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
     }
@@ -51,6 +50,8 @@ public class GameManager : MonoBehaviour
     {
         IsGameOver = false;
         extraCharacters = 0;
+        GameObject.FindGameObjectWithTag("UI").transform.GetChild(3).gameObject.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     /* 
@@ -61,11 +62,12 @@ public class GameManager : MonoBehaviour
         if(alive <= 0)
         {
             IsGameOver = true;
-            ResetGame();
+            GameObject.FindGameObjectWithTag("UI").transform.GetChild(3).gameObject.SetActive(true);
             Debug.Log("Game Over!");
+        } else {
+            extraCharacters = alive;
+            NextLevel();
         }
-        extraCharacters = alive;
-        NextLevel();
     }
 
     public void NextLevel() 
