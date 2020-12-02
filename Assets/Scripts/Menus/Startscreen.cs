@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class Startscreen : MonoBehaviour
 {
-    public void PlayGame()
+    public void LoadLevel(int index)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(index);
     }
     
     public void QuitGame()

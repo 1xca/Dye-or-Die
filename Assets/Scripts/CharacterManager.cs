@@ -6,6 +6,7 @@ public class CharacterManager : MonoBehaviour
 
     //Assign in UnityEditor
     public GameObject Prefab;
+    public CameraShake CameraShake;
     
     public float Spawnrate = 2f;
     public int Amount = 10;
@@ -67,6 +68,7 @@ public class CharacterManager : MonoBehaviour
             finishedCharacters += 1;
         }
         charactersAlive -= 1;
+        StartCoroutine(CameraShake.Shake(0.15f, 0.7f));
         if(charactersAlive <= 0)
         {
             GameManager.Instance.GameOver(finishedCharacters);

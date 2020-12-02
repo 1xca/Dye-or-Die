@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Character
   - UI
+  - LoseCondition
   layers:
   - Default
   - TransparentFX

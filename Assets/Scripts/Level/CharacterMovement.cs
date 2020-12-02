@@ -61,14 +61,14 @@ public class CharacterMovement : MonoBehaviour
             rBody.velocity = new Vector3(newVelocityX, rBody.velocity.y, 0);
         }
 
-        if(rBody.velocity.magnitude >= 14)
-        {
-            needsGravity = false;
-        } 
-        else
-        {
-            needsGravity = true;
-        }
+        // if(rBody.velocity.magnitude >= 30)
+        // {
+        //     needsGravity = false;
+        // } 
+        // else
+        // {
+        //     needsGravity = true;
+        // }
 
         
     }
@@ -131,7 +131,7 @@ public class CharacterMovement : MonoBehaviour
             gameObject.SetActive(false);
             CharacterManager.Instance.LoseCharacter(true);
         }
-        if(other.gameObject.name == "Lose")
+        if(other.gameObject.CompareTag("LoseCondition"))
         {
             Debug.Log("Lost: " + this.name);
             Destroy(gameObject);

@@ -57,7 +57,7 @@ public class Colorpicking : MonoBehaviour
     {
         activeColor = (Colors)color;
         GameManager.Instance.SetActiveColor(activeColor);
-        SpeedUp();
+        // SpeedUp();
     }
 }
 

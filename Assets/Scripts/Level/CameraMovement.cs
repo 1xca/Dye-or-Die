@@ -6,6 +6,10 @@ public class CameraMovement : MonoBehaviour
     public float ScrollSpeed = 20f;
     public float MinX = -10.5f;
     public float MaxX = 55f;
+
+    void Start() {
+        Camera = gameObject.transform;
+    }
     
     void FixedUpdate()
     {
