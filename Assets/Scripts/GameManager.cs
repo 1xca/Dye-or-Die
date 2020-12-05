@@ -49,7 +49,6 @@ public class GameManager : MonoBehaviour
     public void ResetGame()
     {
         IsGameOver = false;
-        extraCharacters = 0;
         GameObject.FindGameObjectWithTag("UI").transform.GetChild(3).gameObject.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
@@ -59,15 +58,12 @@ public class GameManager : MonoBehaviour
     */ 
     public void GameOver(int alive)
     {
+        extraCharacters = alive;
         if(alive <= 0)
         {
             IsGameOver = true;
-            GameObject.FindGameObjectWithTag("UI").transform.GetChild(3).gameObject.SetActive(true);
-            Debug.Log("Game Over!");
-        } else {
-            extraCharacters = alive;
-            NextLevel();
         }
+        BetweenLevel.IsBetweenLevels = true;
     }
 
     public void NextLevel() 

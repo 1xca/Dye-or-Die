@@ -42,6 +42,7 @@ public class Pausescreen : MonoBehaviour
         // TODO: Create Constants
         Time.timeScale = 1f;
         IsPaused = false;
+        BetweenLevel.IsBetweenLevels = false;
         GameManager.Instance.ResetGame();
         SceneManager.LoadScene(0);
         Debug.Log("Went to Menu!");
