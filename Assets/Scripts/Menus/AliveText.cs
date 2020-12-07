@@ -4,9 +4,11 @@ using TMPro;
 
 public class AliveText : MonoBehaviour
 {
-    public TextMeshProUGUI text;
+    public TextMeshProUGUI ballCountText;
+    public TextMeshProUGUI timeCountText;
     void Update()
     {
-        text.text = "Amount: " + CharacterManager.Instance.Amount + " Alive: " + (CharacterManager.Instance.charactersAlive + CharacterManager.Instance.finishedCharacters);
+        ballCountText.text = "BALLS:     " + (CharacterManager.Instance.charactersAlive + CharacterManager.Instance.finishedCharacters);
+        timeCountText.text = "TIME  00:30s" ; //TODO Add Timer
     }
 }

@@ -5,6 +5,8 @@ public class Pausescreen : MonoBehaviour
 {
     public static bool IsPaused = false;
     public GameObject PauseMenu;
+    public GameObject PauseButton;
+    public GameObject ResumeButton;
 
     void Update()
     {
@@ -28,6 +30,7 @@ public class Pausescreen : MonoBehaviour
         PauseMenu.SetActive(false);
         Time.timeScale = 1f;
         IsPaused = false;
+        ToggleButtons(IsPaused);
     }
 
     public void Pause()
@@ -35,13 +38,15 @@ public class Pausescreen : MonoBehaviour
         PauseMenu.SetActive(true);
         Time.timeScale = 0f;
         IsPaused = true;
+        ToggleButtons(IsPaused);
     }
 
     public void Menu()
     {
         // TODO: Create Constants
-        Time.timeScale = 1f;
-        IsPaused = false;
+        // Time.timeScale = 1f;
+        // IsPaused = false;
+        Resume();
         BetweenLevel.IsBetweenLevels = false;
         GameManager.Instance.ResetGame();
         SceneManager.LoadScene(0);
@@ -52,5 +57,11 @@ public class Pausescreen : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Quit!");
+    }
+
+    public void ToggleButtons(bool paused)
+    {
+        PauseButton.SetActive(!paused);
+        ResumeButton.SetActive(paused);
     }
 }

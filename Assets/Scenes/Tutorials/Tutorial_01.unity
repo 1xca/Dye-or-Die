@@ -646,7 +646,7 @@ Transform:
   m_Children:
   - {fileID: 350591135}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &288422255
 Mesh:
@@ -1013,7 +1013,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1025974886363780214, guid: c23bfcca1de87674cac446371a01bf0d, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1025974886363780214, guid: c23bfcca1de87674cac446371a01bf0d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3429,7 +3429,7 @@ MonoBehaviour:
   Prefab: {fileID: 54193129809386290, guid: e5c64ccb7a1f0f449be70565cde062d6, type: 3}
   CameraShake: {fileID: 350591136}
   Spawnrate: 2
-  Amount: 3
+  Amount: 1
   charactersAlive: 0
   finishedCharacters: 0
 --- !u!4 &945517665
@@ -3444,7 +3444,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &968925008
 Mesh:
@@ -4315,7 +4315,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1119647026
 Mesh:
