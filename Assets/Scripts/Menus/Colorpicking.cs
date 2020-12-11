@@ -6,7 +6,7 @@ public class Colorpicking : MonoBehaviour
     public GameObject ColorPickerUI;
     public Button[] ColorButtons;
     public static bool IsSlowedDown = false;
-    private Colors activeColor = Colors.Red; 
+    private Colors activeColor = Colors.Jump; 
 
     void Start()
     {
@@ -63,9 +63,9 @@ public class Colorpicking : MonoBehaviour
 
 public enum Colors
 {
-    Red,
-    Blue,
-    Green,
-    Yellow,
+    Jump,
+    Fast,
+    Gravity,
+    Direction,
     none
 }

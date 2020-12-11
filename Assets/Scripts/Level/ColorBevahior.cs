@@ -5,6 +5,8 @@ public class ColorBevahior : MonoBehaviour
     public int GroundLayer = 8;
     public ParticleSystem SplashParticles;
     private Renderer rend;
+    
+    public Material[] colorMaterials;
 
     void Update()
     {
@@ -33,10 +35,14 @@ public class ColorBevahior : MonoBehaviour
     private void PaintObject(Collider collider)
     {
         rend = collider.gameObject.GetComponent<Renderer>();
-        Color active = GameManager.Instance.GetActiveColor();
-        rend.material.color = active;
+        Color activeColor = GameManager.Instance.GetActiveColor();
+        Material activeMaterial = colorMaterials[(int)GameManager.Instance.GetActiveColorIndex()];
+        rend.material = activeMaterial;
+        rend.material.color = activeColor;
+        
+        // Particles
         ParticleSystem.MainModule ma = SplashParticles.main;
-        ma.startColor = active;
+        ma.startColor = activeColor;
         Instantiate(SplashParticles, collider.transform.position + new Vector3(1f,0.75f,-1.5f), Quaternion.identity);
     }
 }

@@ -5,14 +5,26 @@ using UnityEngine.UI;
 
 public class ButtonBehavior : MonoBehaviour
 {
-    private RectTransform button;
+    private Image buttonImage;
+    public Sprite activeTexture;
+    public Sprite inactiveTexture;
 
     public void Start()
     {
-        button = this.GetComponent<RectTransform>();
+        buttonImage = this.GetComponent<Image>();
     }
-    public void Scale(float scale)
+    public void Activate()
     {
-        button.localScale = new Vector3(scale, scale, 1f);
+        buttonImage.sprite = activeTexture;
     }   
+
+    public void Deactivate()
+    {
+        buttonImage.sprite = inactiveTexture;
+    }
+
+    public void OnDisable()
+    {
+        Deactivate();
+    }
 }

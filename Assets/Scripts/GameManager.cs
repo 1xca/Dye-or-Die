@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
     public bool IsGameOver = false;
 
     private int extraCharacters = 0;
-    private int activeColorIndex = (int)Colors.Red;
-    private Color[] colors = new Color[] { Color.red, Color.blue, Color.green, Color.yellow, Color.white };
+    private int activeColorIndex = (int)Colors.Jump;
+    private Color[] colors = new Color[] { Color.yellow, Color.red, Color.blue, Color.green, Color.white };
 
     private void Awake()
     {
