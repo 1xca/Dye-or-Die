@@ -3,6 +3,11 @@
 // TODO: Rework
 public class CharacterMovement : MonoBehaviour
 {
+
+    public AudioClip fail;
+    public AudioClip success;
+
+    public AudioSource audioPlayer;
     public float Speed = 100f; 
 
     private bool isGrounded = true;
@@ -21,6 +26,7 @@ public class CharacterMovement : MonoBehaviour
     {
         rBody = GetComponent<Rigidbody>();
         rBody.useGravity = !rBody.useGravity;
+        audioPlayer = GameManager.Instance.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -105,7 +111,7 @@ public class CharacterMovement : MonoBehaviour
                     invoking = true;
                     reactionTimer = 0.75f;
                 }
-                if(rend.material.color == Color.green)
+                if(rend.material.color == Color.magenta)
                 {
                     Invoke("ReverseDirection", 0f);
                     invoking = true;
@@ -128,13 +134,15 @@ public class CharacterMovement : MonoBehaviour
         if(other.gameObject.name == "Win")
         {
             Debug.Log("Win with: " + this.name);
+            audioPlayer.PlayOneShot(success, 0.2f);
             gameObject.SetActive(false);
             CharacterManager.Instance.LoseCharacter(true);
         }
         if(other.gameObject.CompareTag("LoseCondition"))
         {
             Debug.Log("Lost: " + this.name);
-            Destroy(gameObject);
+            audioPlayer.PlayOneShot(fail, 0.3f);
+            Destroy(gameObject, success.length);
             CharacterManager.Instance.LoseCharacter(false);
         }
     }

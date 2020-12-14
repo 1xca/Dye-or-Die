@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 1037
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Scene
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,10 +119,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 987
-  m_MinSize: {x: 708, y: 492}
-  m_MaxSize: {x: 18003, y: 14042}
+  m_MinSize: {x: 709, y: 492}
+  m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 22274
+  controlID: 25241
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 433, y: 492}
   m_MaxSize: {x: 14003, y: 14042}
   vertical: 1
-  controlID: 22275
+  controlID: 25246
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_MinSize: {x: 433, y: 271}
   m_MaxSize: {x: 14003, y: 10021}
   vertical: 0
-  controlID: 22276
+  controlID: 25247
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 22255
+  controlID: 25220
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -458,21 +458,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites/Colorpicker
+    - Assets/Sprites/Cursor
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Sprites/Colorpicker
+  - Assets/Sprites/Cursor
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Luca\Desktop\Dye-or-Die
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a4640000
-    m_LastClickedID: 25764
-    m_ExpandedIDs: 00000000684e0000c64e0000c84e000000ca9a3b
+    m_SelectedIDs: 5e360100
+    m_LastClickedID: 79454
+    m_ExpandedIDs: 000000008c4e00008e4e0000e24e0000e64e0000ec4e0000f24e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -500,7 +500,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000684e0000c64e000000ca9a3b
+    m_ExpandedIDs: 000000008e4e0000e24e0000e64e0000ec4e0000f24e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -584,17 +584,17 @@ MonoBehaviour:
   m_ShowContextualTools: 0
   m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
   m_Gizmos: 1
-  m_OverrideSceneCullingMask: 0
-  m_SceneIsLit: 0
+  m_OverrideSceneCullingMask: 6917529027641081856
+  m_SceneIsLit: 1
   m_SceneLighting: 1
   m_2DMode: 1
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 331.161, y: 154.5761, z: -6217.096}
+    m_Target: {x: 302.99927, y: 147.09135, z: 55.57385}
     speed: 2
-    m_Value: {x: 331.161, y: 154.5761, z: -6217.096}
+    m_Value: {x: 302.99927, y: 147.09135, z: 55.57385}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -606,7 +606,7 @@ MonoBehaviour:
   m_SceneViewState:
     showFog: 1
     showMaterialUpdate: 0
-    showSkybox: 0
+    showSkybox: 1
     showFlares: 1
     showImageEffects: 1
     showParticleSystems: 1
@@ -645,16 +645,16 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 40.540638
+    m_Target: 218.1065
     speed: 2
-    m_Value: 40.540638
+    m_Value: 218.1065
   m_Ortho:
     m_Target: 1
     speed: 2
     m_Value: 1
   m_CameraSettings:
-    m_Speed: 0.64067996
-    m_SpeedNormalized: 0.31999996
+    m_Speed: 0.5207399
+    m_SpeedNormalized: 0.25999996
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -795,9 +795,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 48b50000
-      m_LastClickedID: 46408
-      m_ExpandedIDs: f04efeffeeb4000028b5000032b5000060b500006eb50000ccb50000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: cc0cfeff0a55feff70d2feff18d4feff2cd7feffb6d8feff4cdafeffdedbfeff7cddfeff0edffeffa0e0feff32e2feffc4e3feff56e5feffe8e6feff7ae8feff28eafeff36eafeff36fbffff30df0000ec2e01002a2f0100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -873,7 +873,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 46408
+  m_LastSelectedObjectID: 87042
 --- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -906,7 +906,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 540
   m_AssetGUID: 
   m_InstanceID: 0
   m_LockTracker:

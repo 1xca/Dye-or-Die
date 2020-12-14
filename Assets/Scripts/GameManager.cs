@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -6,10 +7,14 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance = null; 
 
     public bool IsGameOver = false;
+    public AudioSource audioPlayer;
+    public AudioClip win;
+    public AudioClip lose;
+    public Texture2D cursorTexture;
 
     private int extraCharacters = 0;
     private int activeColorIndex = (int)Colors.Jump;
-    private Color[] colors = new Color[] { Color.yellow, Color.red, Color.blue, Color.green, Color.white };
+    private Color[] colors = new Color[] { Color.yellow, Color.red, Color.blue, Color.magenta, Color.white };
 
     private void Awake()
     {
@@ -22,6 +27,11 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    }
+
+    void Start()
+    {
+        Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
     }
 
     void Update()
@@ -62,6 +72,10 @@ public class GameManager : MonoBehaviour
         if(alive <= 0)
         {
             IsGameOver = true;
+            audioPlayer.PlayOneShot(lose);
+        } else 
+        {
+            audioPlayer.PlayOneShot(win);
         }
         BetweenLevel.IsBetweenLevels = true;
     }

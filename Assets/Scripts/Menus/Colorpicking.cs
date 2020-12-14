@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class Colorpicking : MonoBehaviour
 {
     public GameObject ColorPickerUI;
     public Button[] ColorButtons;
+    public Texture2D[] cursorTextures;
     public static bool IsSlowedDown = false;
     private Colors activeColor = Colors.Jump; 
 
@@ -25,6 +27,8 @@ public class Colorpicking : MonoBehaviour
             if(Input.GetMouseButtonDown(1) && !IsSlowedDown)
             {
                 SlowDown();
+                Cursor.lockState = CursorLockMode.Locked;
+                StartCoroutine(UnlockMouse());  
             }
             if(IsSlowedDown)
             {
@@ -35,6 +39,12 @@ public class Colorpicking : MonoBehaviour
                 }
             }
         }
+    }
+
+    IEnumerator UnlockMouse()
+    {
+        yield return 0;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void SlowDown()
@@ -57,6 +67,7 @@ public class Colorpicking : MonoBehaviour
     {
         activeColor = (Colors)color;
         GameManager.Instance.SetActiveColor(activeColor);
+        Cursor.SetCursor(cursorTextures[color], Vector2.zero, CursorMode.Auto);
         // SpeedUp();
     }
 }

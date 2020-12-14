@@ -21,10 +21,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 987
-  m_MinSize: {x: 708, y: 492}
-  m_MaxSize: {x: 18003, y: 14042}
+  m_MinSize: {x: 709, y: 492}
+  m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 20553
+  controlID: 23628
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_MinSize: {x: 433, y: 492}
   m_MaxSize: {x: 14003, y: 14042}
   vertical: 1
-  controlID: 20554
+  controlID: 23629
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_MinSize: {x: 433, y: 271}
   m_MaxSize: {x: 14003, y: 10021}
   vertical: 0
-  controlID: 20502
+  controlID: 23630
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -183,8 +183,8 @@ MonoBehaviour:
     y: 0
     width: 405
     height: 604
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -228,21 +228,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites/Colorpicker
+    - Assets/Sprites/Cursor
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Sprites/Colorpicker
+  - Assets/Sprites/Cursor
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Luca\Desktop\Dye-or-Die
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a4640000
-    m_LastClickedID: 25764
-    m_ExpandedIDs: 00000000684e0000c64e0000c84e000000ca9a3b
+    m_SelectedIDs: 5e360100
+    m_LastClickedID: 79454
+    m_ExpandedIDs: 000000008c4e00008e4e0000e24e0000e64e0000ec4e0000f24e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -270,7 +270,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000684e0000c64e000000ca9a3b
+    m_ExpandedIDs: 000000008e4e0000e24e0000e64e0000ec4e0000f24e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -295,8 +295,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 48b50000
-    m_LastClickedInstanceID: 46408
+    m_SelectedInstanceIDs: 02540100
+    m_LastClickedInstanceID: 87042
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300003e460000be370000000000003e380000
     m_RenameOverlay:
@@ -450,8 +450,8 @@ MonoBehaviour:
     speed: 2
     m_Value: 1
   m_CameraSettings:
-    m_Speed: 0.64067996
-    m_SpeedNormalized: 0.31999996
+    m_Speed: 0.5207399
+    m_SpeedNormalized: 0.25999996
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -588,7 +588,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 20555
+  controlID: 23577
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -646,7 +646,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 4}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: f04efeffeeb4000028b5000032b5000060b500006eb50000ccb50000
+      m_ExpandedIDs: 527efdffc8530100025401000c5401003a54010048540100a8540100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -714,8 +714,8 @@ MonoBehaviour:
     y: 0
     width: 878
     height: 383
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 2}
@@ -749,7 +749,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 46666
+  m_LastSelectedObjectID: 77622
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -807,8 +807,8 @@ MonoBehaviour:
     m_CachedPref: 151
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 46408
-  m_LastVerticalScrollValue: 0
+  m_LastInspectedObjectInstanceID: 87042
+  m_LastVerticalScrollValue: 540
   m_AssetGUID: 
   m_InstanceID: 0
   m_LockTracker:

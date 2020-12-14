@@ -66,9 +66,12 @@ public class CharacterManager : MonoBehaviour
         if(hasReachedFinish)
         {
             finishedCharacters += 1;
+        } 
+        else
+        {
+            StartCoroutine(CameraShake.Shake(0.15f, 0.7f));
         }
         charactersAlive -= 1;
-        StartCoroutine(CameraShake.Shake(0.15f, 0.7f));
         if(charactersAlive <= 0)
         {
             GameManager.Instance.GameOver(finishedCharacters);

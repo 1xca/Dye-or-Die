@@ -2138,8 +2138,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Camera: {fileID: 1233491862}
   ScrollSpeed: 20
-  MinX: -10.5
-  MaxX: 55
+  MinX: -8
+  MaxX: 22
 --- !u!4 &439793084
 Transform:
   m_ObjectHideFlags: 0

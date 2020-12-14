@@ -125,4 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c1437ebc281297418f03e978568f7bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fail: {fileID: 8300000, guid: 5c3dcab86f3900f4fb9981ddf5612b33, type: 3}
+  success: {fileID: 8300000, guid: cff054ab437535542b215975e1932a27, type: 3}
+  audioPlayer: {fileID: 0}
   Speed: 2000
