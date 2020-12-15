@@ -1,4 +1,7 @@
 ﻿using UnityEngine;
+using TMPro;
+using System;
+using UnityEngine.SceneManagement;
 
 public class CharacterManager : MonoBehaviour
 {
@@ -10,6 +13,8 @@ public class CharacterManager : MonoBehaviour
     
     public float Spawnrate = 2f;
     public int Amount = 10;
+    public float gracePeriod = 7f;
+    public TextMeshProUGUI timeText;
 
     // spawnPosition will be position of Object this script is assigned to
     private Vector3 spawnPosition; 
@@ -26,6 +31,8 @@ public class CharacterManager : MonoBehaviour
 
     void Start()
     {
+        timeText = GameObject.FindGameObjectWithTag("Timer").GetComponent<TextMeshProUGUI>();
+
         Amount += GameManager.Instance.GetExtraCharacters();
         spawnPosition = gameObject.transform.position;
         characterPool = new GameObject[Amount];
@@ -37,15 +44,26 @@ public class CharacterManager : MonoBehaviour
             characterPool[i] = newObject;
             newObject.SetActive(false);
         }
+        timeSinceLastSpawn += gracePeriod;
     }
 
     void Update()
     {
-        timeSinceLastSpawn += Time.deltaTime;
-        if(timeSinceLastSpawn >= Spawnrate)
+        timeSinceLastSpawn -= Time.deltaTime;
+        if(gracePeriod >= 0)
+        {
+            gracePeriod -= Time.deltaTime;
+            var ts = TimeSpan.FromSeconds(gracePeriod);
+            timeText.text = "TIME  " + string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds);
+        }
+        else
+        {
+            timeText.text = "LEVEL  " + SceneManager.GetActiveScene().buildIndex;
+        }
+        if(timeSinceLastSpawn <= 0f)
         {
             SpawnCharacter();
-            timeSinceLastSpawn = 0f;
+            timeSinceLastSpawn = Spawnrate;
         }
     }
 

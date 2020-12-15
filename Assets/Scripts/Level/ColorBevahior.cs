@@ -4,9 +4,16 @@ public class ColorBevahior : MonoBehaviour
 {
     public int GroundLayer = 8;
     public ParticleSystem SplashParticles;
+    public AudioClip paint;
     private Renderer rend;
+    private AudioSource audioPlayer;
     
     public Material[] colorMaterials;
+
+    void Start()
+    {
+        audioPlayer = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -44,5 +51,8 @@ public class ColorBevahior : MonoBehaviour
         ParticleSystem.MainModule ma = SplashParticles.main;
         ma.startColor = activeColor;
         Instantiate(SplashParticles, collider.transform.position + new Vector3(1f,0.75f,-1.5f), Quaternion.identity);
+
+        //Sound 
+        audioPlayer.PlayOneShot(paint, 0.5f);
     }
 }

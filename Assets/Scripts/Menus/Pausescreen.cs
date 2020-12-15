@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Pausescreen : MonoBehaviour
 {
@@ -7,6 +8,17 @@ public class Pausescreen : MonoBehaviour
     public GameObject PauseMenu;
     public GameObject PauseButton;
     public GameObject ResumeButton;
+
+    public TMP_FontAsset lightFont;
+    public TMP_FontAsset boldFont;
+    public AudioClip selectMenuItem;
+
+    private AudioSource audioPlayer;
+
+    void Start()
+    {
+        audioPlayer = GameManager.Instance.GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -31,6 +43,7 @@ public class Pausescreen : MonoBehaviour
         Time.timeScale = 1f;
         IsPaused = false;
         ToggleButtons(IsPaused);
+        audioPlayer.PlayOneShot(selectMenuItem);
     }
 
     public void Pause()
@@ -39,13 +52,11 @@ public class Pausescreen : MonoBehaviour
         Time.timeScale = 0f;
         IsPaused = true;
         ToggleButtons(IsPaused);
+        audioPlayer.PlayOneShot(selectMenuItem);
     }
 
     public void Menu()
     {
-        // TODO: Create Constants
-        // Time.timeScale = 1f;
-        // IsPaused = false;
         Resume();
         BetweenLevel.IsBetweenLevels = false;
         GameManager.Instance.ResetGame();
@@ -63,5 +74,18 @@ public class Pausescreen : MonoBehaviour
     {
         PauseButton.SetActive(!paused);
         ResumeButton.SetActive(paused);
+    }
+
+    public void SelectButton(GameObject obj)
+    {
+        TextMeshProUGUI text = obj.GetComponentInChildren<TextMeshProUGUI>();
+        text.font = boldFont;
+
+    }
+
+    public void DeselectButton(GameObject obj)
+    {
+        TextMeshProUGUI text = obj.GetComponentInChildren<TextMeshProUGUI>();
+        text.font = lightFont;
     }
 }

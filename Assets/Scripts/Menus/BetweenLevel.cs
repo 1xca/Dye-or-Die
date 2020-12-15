@@ -12,9 +12,16 @@ public class BetweenLevel : MonoBehaviour
     public TextMeshProUGUI savedBallsText;
     public TextMeshProUGUI nextText;
     public TextMeshProUGUI headerText;
+    
+    public AudioClip selectMenuItem;
+    private AudioSource audioPlayer;
 
     public static bool IsBetweenLevels = false;
 
+    void Start()
+    {
+        audioPlayer = GameManager.Instance.GetComponent<AudioSource>();
+    }
     void Update()
     {
         SetScreenActive(IsBetweenLevels);
@@ -52,5 +59,6 @@ public class BetweenLevel : MonoBehaviour
             GameManager.Instance.ResetGame();
         }
         IsBetweenLevels = false;
+        audioPlayer.PlayOneShot(selectMenuItem);
     }
 }

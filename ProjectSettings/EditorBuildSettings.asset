@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hard/Level_13.unity
     guid: 21b3d9fe91a946d4dbe7e98a1981123b
+  - enabled: 1
+    path: Assets/Scenes/Finalscene.unity
+    guid: ec2c9666dc80c40489826baadedd945d
   m_configObjects: {}

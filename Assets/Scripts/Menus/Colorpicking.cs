@@ -6,9 +6,10 @@ public class Colorpicking : MonoBehaviour
 {
     public GameObject ColorPickerUI;
     public Button[] ColorButtons;
-    public Texture2D[] cursorTextures;
     public static bool IsSlowedDown = false;
-    private Colors activeColor = Colors.Jump; 
+    public AudioClip pickSound;
+    private Colors activeColor = Colors.none; 
+    private AudioSource audioPlayer;
 
     void Start()
     {
@@ -18,6 +19,7 @@ public class Colorpicking : MonoBehaviour
         // ColorButtons[(int)Colors.Yellow].GetComponent<Image>().color = Color.yellow;
         // ColorButtons[(int)Colors.none].GetComponent<Image>().color = Color.white;
         GameManager.Instance.SetActiveColor(activeColor);
+        audioPlayer = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -67,7 +69,7 @@ public class Colorpicking : MonoBehaviour
     {
         activeColor = (Colors)color;
         GameManager.Instance.SetActiveColor(activeColor);
-        Cursor.SetCursor(cursorTextures[color], Vector2.zero, CursorMode.Auto);
+        audioPlayer.PlayOneShot(pickSound);
         // SpeedUp();
     }
 }

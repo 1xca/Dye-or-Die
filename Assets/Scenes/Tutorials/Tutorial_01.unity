@@ -689,7 +689,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 180004718}
   m_LocalRotation: {x: 0.074978724, y: -0, z: -0, w: 0.9971852}
-  m_LocalPosition: {x: 8, y: 16.542171, z: -50}
+  m_LocalPosition: {x: 8, y: 15, z: -50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 885273803}
@@ -3804,6 +3804,8 @@ MonoBehaviour:
   CameraShake: {fileID: 885273804}
   Spawnrate: 2
   Amount: 1
+  gracePeriod: 7
+  timeText: {fileID: 0}
   charactersAlive: 0
   finishedCharacters: 0
 --- !u!4 &945517665

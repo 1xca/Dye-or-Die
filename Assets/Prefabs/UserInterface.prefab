@@ -155,7 +155,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 135129959854607569}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -245,7 +245,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1025974886363780215}
+          m_TargetAssemblyTypeName: Pausescreen, Assembly-CSharp
+          m_MethodName: SelectButton
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 135129959854607569}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1025974886363780215}
+          m_TargetAssemblyTypeName: Pausescreen, Assembly-CSharp
+          m_MethodName: DeselectButton
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 135129959854607569}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &271221632959000790
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,7 +596,7 @@ GameObject:
   - component: {fileID: 3983333606096805373}
   - component: {fileID: 5711594528888457715}
   - component: {fileID: 8763365571806198069}
-  - component: {fileID: 8841534565287319523}
+  - component: {fileID: 791354995099029746}
   m_Layer: 5
   m_Name: nextButton
   m_TagString: Untagged
@@ -685,7 +717,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &8841534565287319523
+--- !u!114 &791354995099029746
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -697,7 +729,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1025974886363780215}
+          m_TargetAssemblyTypeName: Pausescreen, Assembly-CSharp
+          m_MethodName: SelectButton
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 952238931220548646}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1025974886363780215}
+          m_TargetAssemblyTypeName: Pausescreen, Assembly-CSharp
+          m_MethodName: DeselectButton
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 952238931220548646}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1025974886363780218
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,6 +884,9 @@ MonoBehaviour:
   PauseMenu: {fileID: 1025974887056528732}
   PauseButton: {fileID: 2920714655512599324}
   ResumeButton: {fileID: 5953144757281420525}
+  lightFont: {fileID: 11400000, guid: b0aba6e388d9ae74396ecaf850d5c277, type: 2}
+  boldFont: {fileID: 11400000, guid: 0d1591ec444f406478894c12e89667da, type: 2}
+  selectMenuItem: {fileID: 8300000, guid: add038132abf6104e8b41477c3007eab, type: 3}
 --- !u!114 &6024297524876663007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -839,12 +906,7 @@ MonoBehaviour:
   - {fileID: 1519807724705788483}
   - {fileID: 2854689412864516581}
   - {fileID: 810870863959287533}
-  cursorTextures:
-  - {fileID: 2800000, guid: 09eb4dc8585b47a408cfa19e9f8060d3, type: 3}
-  - {fileID: 2800000, guid: c94d9862aa8643a418ae6e75d5d2a191, type: 3}
-  - {fileID: 2800000, guid: a1caac3aea7697646b8ba20e20924c61, type: 3}
-  - {fileID: 2800000, guid: 5f05d0bae07717d4e9197884606bd1ec, type: 3}
-  - {fileID: 2800000, guid: cd2b804a4b70ba94394494c9dd4d92bd, type: 3}
+  pickSound: {fileID: 8300000, guid: 5b4bbbc397af9554cb587eb3457bfd72, type: 3}
 --- !u!114 &4043798751080319320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -858,7 +920,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballCountText: {fileID: 7520860086933167027}
-  timeCountText: {fileID: 6934034921728585793}
 --- !u!114 &8752161670788667976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -876,6 +937,7 @@ MonoBehaviour:
   savedBallsText: {fileID: 2935983743705403993}
   nextText: {fileID: 8195983369272721022}
   headerText: {fileID: 3407947809791553394}
+  selectMenuItem: {fileID: 8300000, guid: add038132abf6104e8b41477c3007eab, type: 3}
 --- !u!82 &3227872934216281146
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1285,7 +1347,7 @@ GameObject:
   - component: {fileID: 6934034921728585793}
   m_Layer: 0
   m_Name: TimeCountText
-  m_TagString: Untagged
+  m_TagString: Timer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1623,7 +1685,7 @@ GameObject:
   - component: {fileID: 8284345288270456860}
   - component: {fileID: 9188484564224132148}
   - component: {fileID: 524171857287526714}
-  - component: {fileID: 3840134893983402030}
+  - component: {fileID: 2777638733219165197}
   m_Layer: 5
   m_Name: HowToButton
   m_TagString: Untagged
@@ -1731,7 +1793,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8284345288270456860}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3227872934216281146}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: add038132abf6104e8b41477c3007eab, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &524171857287526714
 Animator:
   serializedVersion: 3
@@ -1751,7 +1825,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3840134893983402030
+--- !u!114 &2777638733219165197
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1763,7 +1837,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1025974886363780215}
+          m_TargetAssemblyTypeName: Pausescreen, Assembly-CSharp
+          m_MethodName: SelectButton
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1952214316718326981}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1025974886363780215}
+          m_TargetAssemblyTypeName: Pausescreen, Assembly-CSharp
+          m_MethodName: DeselectButton
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1952214316718326981}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2266754490652203265
 GameObject:
   m_ObjectHideFlags: 0
@@ -3072,6 +3178,7 @@ GameObject:
   - component: {fileID: 3944513391818385769}
   - component: {fileID: 6373055102169281156}
   - component: {fileID: 2448993204366649199}
+  - component: {fileID: 3141332349268328966}
   m_Layer: 5
   m_Name: MenuButton
   m_TagString: Untagged
@@ -3114,7 +3221,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4266090122976249543}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -3192,6 +3299,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3141332349268328966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4266090122976249543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1025974886363780215}
+          m_TargetAssemblyTypeName: Pausescreen, Assembly-CSharp
+          m_MethodName: SelectButton
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 4266090122976249543}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1025974886363780215}
+          m_TargetAssemblyTypeName: Pausescreen, Assembly-CSharp
+          m_MethodName: DeselectButton
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 4266090122976249543}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &4369963540855467369
 GameObject:
   m_ObjectHideFlags: 0
@@ -4268,6 +4420,7 @@ GameObject:
   - component: {fileID: 1124952922583547400}
   - component: {fileID: 5710086904488702277}
   - component: {fileID: 2327054526115770556}
+  - component: {fileID: 8305105994065491959}
   m_Layer: 5
   m_Name: MenuButton
   m_TagString: Untagged
@@ -4388,6 +4541,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8305105994065491959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7195118855597491318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1025974886363780215}
+          m_TargetAssemblyTypeName: Pausescreen, Assembly-CSharp
+          m_MethodName: SelectButton
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 7195118855597491318}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1025974886363780215}
+          m_TargetAssemblyTypeName: Pausescreen, Assembly-CSharp
+          m_MethodName: DeselectButton
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 7195118855597491318}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7310507752038862820
 GameObject:
   m_ObjectHideFlags: 0

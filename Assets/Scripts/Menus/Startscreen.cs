@@ -9,13 +9,20 @@ public class Startscreen : MonoBehaviour
     public TMP_FontAsset boldFont;
     public float highlightOffset = 20f;
     public Animator levelsAnimator;
-    private bool selection;
+    public Animator howToAnimator;
+    
+    public AudioClip selectMenuItem;
+    private AudioSource audioPlayer;
+
+    void Start()
+    {
+        audioPlayer = GameManager.Instance.GetComponent<AudioSource>();
+    }
 
     public void SelectButton(GameObject obj)
     {
         TextMeshProUGUI text = obj.GetComponentInChildren<TextMeshProUGUI>();
         text.font = boldFont;
-        // obj.transform.position += Vector3.right * highlightOffset;
 
     }
 
@@ -23,17 +30,20 @@ public class Startscreen : MonoBehaviour
     {
         TextMeshProUGUI text = obj.GetComponentInChildren<TextMeshProUGUI>();
         text.font = lightFont;
-        // obj.transform.position += Vector3.left * highlightOffset;
     }
 
-    public void ToogleSelectLevelsButton()
+    public void ToogleSelectLevelsButton(bool selection)
     {
-        selection = !selection;
         levelsAnimator.SetBool("Selected", selection);
+    }
+    public void ToogleHowToButton(bool selection)
+    {
+        howToAnimator.SetBool("Selected", selection);
     }
 
     public void LoadLevel(int index)
     {
+        audioPlayer.PlayOneShot(selectMenuItem);
         SceneManager.LoadScene(index);
     }
     
@@ -41,5 +51,11 @@ public class Startscreen : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Quit!");
+    }
+
+    public void PlayAgain()
+    {
+        GameManager.Instance.ResetGame();
+        SceneManager.LoadScene(0);
     }
 }

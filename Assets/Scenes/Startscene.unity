@@ -171,6 +171,8 @@ GameObject:
   - component: {fileID: 60094778}
   - component: {fileID: 60094777}
   - component: {fileID: 60094776}
+  - component: {fileID: 60094779}
+  - component: {fileID: 60094780}
   m_Layer: 5
   m_Name: HowToButton
   m_TagString: Untagged
@@ -253,6 +255,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1870150753}
+        m_TargetAssemblyTypeName: Startscreen, Assembly-CSharp
+        m_MethodName: ToogleHowToButton
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1870150753}
+        m_TargetAssemblyTypeName: Startscreen, Assembly-CSharp
+        m_MethodName: ToogleSelectLevelsButton
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1894322365}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: add038132abf6104e8b41477c3007eab, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &60094777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,7 +298,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 60094774}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -291,6 +329,70 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 60094774}
   m_CullTransparentMesh: 0
+--- !u!114 &60094779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60094774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1870150753}
+          m_TargetAssemblyTypeName: Startscreen, Assembly-CSharp
+          m_MethodName: SelectButton
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 60094774}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1870150753}
+          m_TargetAssemblyTypeName: Startscreen, Assembly-CSharp
+          m_MethodName: DeselectButton
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 60094774}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!95 &60094780
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60094774}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2b9f7fd1b2f3a7448b7da23462789d08, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &70119623
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,6 +576,7 @@ GameObject:
   - component: {fileID: 103349955}
   - component: {fileID: 103349954}
   - component: {fileID: 103349953}
+  - component: {fileID: 103349956}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
@@ -556,6 +659,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1870150753}
+        m_TargetAssemblyTypeName: Startscreen, Assembly-CSharp
+        m_MethodName: ToogleSelectLevelsButton
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1870150753}
+        m_TargetAssemblyTypeName: Startscreen, Assembly-CSharp
+        m_MethodName: ToogleHowToButton
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1894322365}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: add038132abf6104e8b41477c3007eab, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &103349954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -563,7 +702,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 103349951}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -594,6 +733,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 103349951}
   m_CullTransparentMesh: 0
+--- !u!114 &103349956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103349951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1870150753}
+          m_TargetAssemblyTypeName: Startscreen, Assembly-CSharp
+          m_MethodName: SelectButton
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 103349951}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1870150753}
+          m_TargetAssemblyTypeName: Startscreen, Assembly-CSharp
+          m_MethodName: DeselectButton
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 103349951}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &132561898
 GameObject:
   m_ObjectHideFlags: 0
@@ -2975,6 +3159,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1870150753}
+        m_TargetAssemblyTypeName: Startscreen, Assembly-CSharp
+        m_MethodName: ToogleSelectLevelsButton
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1870150753}
+        m_TargetAssemblyTypeName: Startscreen, Assembly-CSharp
+        m_MethodName: ToogleHowToButton
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1036190689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2982,7 +3190,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1036190686}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -5092,6 +5300,8 @@ MonoBehaviour:
   boldFont: {fileID: 11400000, guid: 0d1591ec444f406478894c12e89667da, type: 2}
   highlightOffset: 40
   levelsAnimator: {fileID: 2031659778}
+  howToAnimator: {fileID: 60094780}
+  selectMenuItem: {fileID: 8300000, guid: add038132abf6104e8b41477c3007eab, type: 3}
 --- !u!1 &1894322361
 GameObject:
   m_ObjectHideFlags: 0
@@ -5127,7 +5337,13 @@ MonoBehaviour:
   audioPlayer: {fileID: 1894322365}
   win: {fileID: 8300000, guid: c0809b670af62234790463901f627819, type: 3}
   lose: {fileID: 8300000, guid: 24f3fa75fe323774784a37a2b01f3b2b, type: 3}
-  cursorTexture: {fileID: 2800000, guid: 281ea856a828da046b66f2b139cd5809, type: 3}
+  cursorTextures:
+  - {fileID: 2800000, guid: 09eb4dc8585b47a408cfa19e9f8060d3, type: 3}
+  - {fileID: 2800000, guid: c94d9862aa8643a418ae6e75d5d2a191, type: 3}
+  - {fileID: 2800000, guid: a1caac3aea7697646b8ba20e20924c61, type: 3}
+  - {fileID: 2800000, guid: 5f05d0bae07717d4e9197884606bd1ec, type: 3}
+  - {fileID: 2800000, guid: cd2b804a4b70ba94394494c9dd4d92bd, type: 3}
+  - {fileID: 2800000, guid: 281ea856a828da046b66f2b139cd5809, type: 3}
 --- !u!114 &1894322363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5142,6 +5358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GroundLayer: 8
   SplashParticles: {fileID: 6968518981356126311, guid: 0f8efabebe347e347a52f6b2e6360cc1, type: 3}
+  paint: {fileID: 8300000, guid: 88e046835c181414d84d05925e8b2ff6, type: 3}
   colorMaterials:
   - {fileID: 2100000, guid: fab2dc67997ecee40ae595a76d975e99, type: 2}
   - {fileID: 2100000, guid: 4cb9392a107419b4a815962bd9f43301, type: 2}
@@ -5489,7 +5706,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1870150753}
         m_TargetAssemblyTypeName: Startscreen, Assembly-CSharp
         m_MethodName: ToogleSelectLevelsButton
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5497,6 +5714,30 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1870150753}
+        m_TargetAssemblyTypeName: Startscreen, Assembly-CSharp
+        m_MethodName: ToogleHowToButton
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1894322365}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: add038132abf6104e8b41477c3007eab, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2031659776
 MonoBehaviour:

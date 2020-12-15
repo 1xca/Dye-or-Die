@@ -10,10 +10,11 @@ public class GameManager : MonoBehaviour
     public AudioSource audioPlayer;
     public AudioClip win;
     public AudioClip lose;
-    public Texture2D cursorTexture;
+    public Texture2D[] cursorTextures;
+    private int blackCursor = (int)Colors.none + 1;
 
     private int extraCharacters = 0;
-    private int activeColorIndex = (int)Colors.Jump;
+    private int activeColorIndex = (int)Colors.none;
     private Color[] colors = new Color[] { Color.yellow, Color.red, Color.blue, Color.magenta, Color.white };
 
     private void Awake()
@@ -31,7 +32,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
+        Cursor.SetCursor(cursorTextures[blackCursor], Vector2.zero, CursorMode.Auto);
     }
 
     void Update()
@@ -59,6 +60,7 @@ public class GameManager : MonoBehaviour
     public void ResetGame()
     {
         IsGameOver = false;
+        extraCharacters = 0;
         GameObject.FindGameObjectWithTag("UI").transform.GetChild(3).gameObject.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
@@ -99,6 +101,7 @@ public class GameManager : MonoBehaviour
     public void SetActiveColor(Colors color)
     {
         activeColorIndex = (int)color;
+        Cursor.SetCursor(cursorTextures[(int)color], Vector2.zero, CursorMode.Auto);
     }
 
     public Color GetActiveColor()
