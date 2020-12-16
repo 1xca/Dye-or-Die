@@ -61,8 +61,11 @@ public class GameManager : MonoBehaviour
     {
         IsGameOver = false;
         extraCharacters = 0;
-        GameObject.FindGameObjectWithTag("UI").transform.GetChild(3).gameObject.SetActive(false);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if(SceneManager.GetActiveScene().buildIndex != 14) 
+        {
+            GameObject.FindGameObjectWithTag("UI").transform.GetChild(3).gameObject.SetActive(false);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     /* 
