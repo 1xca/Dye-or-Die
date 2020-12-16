@@ -131,7 +131,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.name == "Win")
+        if(other.gameObject.CompareTag("WinCondition"))
         {
             Debug.Log("Win with: " + this.name);
             audioPlayer.PlayOneShot(success, 0.2f);

@@ -17,6 +17,10 @@ public class Startscreen : MonoBehaviour
     void Start()
     {
         audioPlayer = GameManager.Instance.GetComponent<AudioSource>();
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            MusicPlayer.Instance.RefreshButtonText();
+        }
     }
 
     public void SelectButton(GameObject obj)
@@ -43,7 +47,7 @@ public class Startscreen : MonoBehaviour
 
     public void LoadLevel(int index)
     {
-        audioPlayer.PlayOneShot(selectMenuItem);
+        audioPlayer.PlayOneShot(selectMenuItem, 0.7f);
         SceneManager.LoadScene(index);
     }
     
@@ -57,5 +61,15 @@ public class Startscreen : MonoBehaviour
     {
         GameManager.Instance.ResetGame();
         SceneManager.LoadScene(0);
+    }
+
+    public void ToggleMusic()
+    {
+        MusicPlayer.Instance.Toggle();
+    }
+
+    public void PlayButtonSelectSound() 
+    {
+        audioPlayer.PlayOneShot(selectMenuItem, 0.7f);
     }
 }

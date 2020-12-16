@@ -1356,11 +1356,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   howToScreens:
-  - {fileID: 21300000, guid: 8a46fdf0b4dcd04468c444ac82b272de, type: 3}
-  - {fileID: 21300000, guid: 42f26b8df2c498e4fb775d687d78e233, type: 3}
-  - {fileID: 21300000, guid: 098821e6cd5a8cc40862f2eee0d11b9c, type: 3}
-  - {fileID: 21300000, guid: 3fd7641cfa11dc643b7081fbd59d9587, type: 3}
-  - {fileID: 21300000, guid: f6755da7af235224487f9c38e600172b, type: 3}
+  - {fileID: 21300000, guid: 455968431bae1744e8c1b4d0a3226f41, type: 3}
+  - {fileID: 21300000, guid: eab0c2fa87dcd4349bdda9d9064c4793, type: 3}
+  - {fileID: 21300000, guid: e166bb0df13523b4bbee9925d1d2515d, type: 3}
+  - {fileID: 21300000, guid: 0ce15ff5b5e58a943ad5a4473603552c, type: 3}
+  - {fileID: 21300000, guid: 36fc34cacaa56384eb2af1eadade03a1, type: 3}
   leftButton: {fileID: 6223115536728959251}
   rightButton: {fileID: 8171258627704504586}
 --- !u!1 &1533371303103271249

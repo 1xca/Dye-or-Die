@@ -8,6 +8,9 @@ TagManager:
   - UI
   - LoseCondition
   - Timer
+  - MusicButton
+  - MusicPlayer
+  - WinCondition
   layers:
   - Default
   - TransparentFX

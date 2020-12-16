@@ -8,12 +8,13 @@ public class HowToMenu : MonoBehaviour
     public GameObject leftButton;
     public GameObject rightButton;
 
-    private Pages currentPage;
+    private Pages currentPage = Pages.Goal;
     private Image image;
 
     void Start()
     {
         image = GetComponent<Image>();
+        image.sprite = howToScreens[(int)currentPage];
     }
 
     void Update()

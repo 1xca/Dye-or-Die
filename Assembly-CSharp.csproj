@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraShake.cs" />
+     <Compile Include="Assets\Scripts\Menus\HowToMenu.cs" />
      <Compile Include="Assets\Scripts\Level\ColorBevahior.cs" />
      <Compile Include="Assets\Scripts\CharacterManager.cs" />
      <Compile Include="Assets\Scripts\Menus\BetweenLevel.cs" />
@@ -48,7 +49,7 @@
      <Compile Include="Assets\Scripts\Level\CharacterMovement.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Menus\Colorpicking.cs" />
-     <Compile Include="Assets\Scripts\Menus\HowToMenu.cs" />
+     <Compile Include="Assets\Scripts\MusicPlayer.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
