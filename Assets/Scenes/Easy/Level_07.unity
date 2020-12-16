@@ -986,6 +986,8 @@ MonoBehaviour:
   CameraShake: {fileID: 1188667003}
   Spawnrate: 2
   Amount: 1
+  gracePeriod: 7
+  timeText: {fileID: 0}
   charactersAlive: 0
   finishedCharacters: 0
 --- !u!4 &166661554
@@ -7173,7 +7175,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5577919318522094879, guid: 8b3c3f7043fec9143a17bd6d70f1ca3c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 5577919318522094879, guid: 8b3c3f7043fec9143a17bd6d70f1ca3c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7403,7 +7405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5577919318522094879, guid: 8b3c3f7043fec9143a17bd6d70f1ca3c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8
+      value: -16
       objectReference: {fileID: 0}
     - target: {fileID: 5577919318522094879, guid: 8b3c3f7043fec9143a17bd6d70f1ca3c, type: 3}
       propertyPath: m_LocalPosition.z

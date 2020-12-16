@@ -8,6 +8,7 @@ public class Pausescreen : MonoBehaviour
     public GameObject PauseMenu;
     public GameObject PauseButton;
     public GameObject ResumeButton;
+    public GameObject howToMenu;
 
     public TMP_FontAsset lightFont;
     public TMP_FontAsset boldFont;
@@ -44,6 +45,7 @@ public class Pausescreen : MonoBehaviour
         IsPaused = false;
         ToggleButtons(IsPaused);
         audioPlayer.PlayOneShot(selectMenuItem);
+        howToMenu.SetActive(false);
     }
 
     public void Pause()
