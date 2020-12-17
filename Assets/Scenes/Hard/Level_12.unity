@@ -52318,8 +52318,8 @@ MonoBehaviour:
   Prefab: {fileID: 54193129809386290, guid: e5c64ccb7a1f0f449be70565cde062d6, type: 3}
   CameraShake: {fileID: 674054756}
   Spawnrate: 2
-  Amount: 10
-  gracePeriod: 7
+  Amount: 3
+  gracePeriod: 10
   timeText: {fileID: 0}
   charactersAlive: 0
   finishedCharacters: 0

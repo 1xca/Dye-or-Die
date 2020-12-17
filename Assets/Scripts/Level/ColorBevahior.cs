@@ -23,17 +23,20 @@ public class ColorBevahior : MonoBehaviour
     private void CheckMouse() 
     {
         RaycastHit hit;
-        if (Input.GetMouseButtonDown(0) && !Colorpicking.IsSlowedDown)
+        if(!Colorpicking.IsSlowedDown && !Pausescreen.IsPaused && !BetweenLevel.IsBetweenLevels) 
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit))
+            if (Input.GetMouseButtonDown(0))
             {
-                Debug.Log("Object: " + hit.collider.name + " has been clicked");
-
-                // Only Paint if Object is actually Ground 
-                if(hit.collider.gameObject.layer == GroundLayer)
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(ray, out hit))
                 {
-                    PaintObject(hit.collider);
+                    Debug.Log("Object: " + hit.collider.name + " has been clicked");
+
+                    // Only Paint if Object is actually Ground 
+                    if(hit.collider.gameObject.layer == GroundLayer)
+                    {
+                        PaintObject(hit.collider);
+                    }
                 }
             }
         }

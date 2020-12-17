@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Video;
+using System.Collections;
 
 public class Startscreen : MonoBehaviour
 {
@@ -11,8 +13,11 @@ public class Startscreen : MonoBehaviour
     public Animator levelsAnimator;
     public Animator howToAnimator;
     
+    public VideoPlayer videoPlayer;
+    public GameObject videoObject;
     public AudioClip selectMenuItem;
     private AudioSource audioPlayer;
+    private bool quickStartVideoPlaying = false;
 
     void Start()
     {
@@ -20,6 +25,17 @@ public class Startscreen : MonoBehaviour
         if(SceneManager.GetActiveScene().buildIndex == 0)
         {
             MusicPlayer.Instance.RefreshButtonText();
+        }
+    }
+
+    void Update()
+    {
+        if(quickStartVideoPlaying)
+        {
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                StopVideoAndStartLevel();
+            }
         }
     }
 
@@ -49,6 +65,28 @@ public class Startscreen : MonoBehaviour
     {
         audioPlayer.PlayOneShot(selectMenuItem, 0.7f);
         SceneManager.LoadScene(index);
+    }
+
+    public void QuickStart()
+    {
+        videoPlayer.time = 0f;
+        videoPlayer.Play();
+        quickStartVideoPlaying = true;
+        StartCoroutine(StartLevelAfter());
+    }
+     
+    IEnumerator StartLevelAfter()
+    {
+        float delayTime = (float)videoPlayer.length;
+        yield return new WaitForSeconds(delayTime + 0.5f);
+        LoadLevel(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void StopVideoAndStartLevel(){
+        StopCoroutine("StartLevelAfter");
+        //videoObject.SetActive(false);
+        quickStartVideoPlaying = false;
+        LoadLevel(SceneManager.GetActiveScene().buildIndex + 1);
     }
     
     public void QuitGame()

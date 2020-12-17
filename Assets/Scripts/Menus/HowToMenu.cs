@@ -1,31 +1,35 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class HowToMenu : MonoBehaviour
 {
 
-    public Sprite[] howToScreens;
+    public Texture[] howToScreens;
     public GameObject leftButton;
     public GameObject rightButton;
+    public VideoPlayer videoPlayer;
 
     private Pages currentPage = Pages.Goal;
-    private Image image;
+    private RawImage image;
 
     void Start()
     {
-        image = GetComponent<Image>();
-        image.sprite = howToScreens[(int)currentPage];
+        image = GetComponent<RawImage>();
+        image.texture = howToScreens[(int)currentPage];
     }
 
     void Update()
     {
-        if(currentPage == Pages.Tip)
+        if(currentPage == Pages.Video)
         {
             rightButton.SetActive(false);
+            videoPlayer.Play();
         }
         else 
         {
             rightButton.SetActive(true);
+            videoPlayer.Pause();
         }
         if(currentPage == Pages.Goal)
         {
@@ -39,10 +43,10 @@ public class HowToMenu : MonoBehaviour
 
     public void nextPage()
     {
-        if(currentPage != Pages.Tip)
+        if(currentPage != Pages.Video)
         {
             currentPage += 1;
-            image.sprite = howToScreens[(int)currentPage];
+            image.texture = howToScreens[(int)currentPage];
         }
     }
 
@@ -51,7 +55,7 @@ public class HowToMenu : MonoBehaviour
         if(currentPage != Pages.Goal)
         {
             currentPage -= 1;
-            image.sprite = howToScreens[(int)currentPage];
+            image.texture = howToScreens[(int)currentPage];
         }
     }
 }
@@ -61,5 +65,6 @@ public enum Pages {
     Control,
     Colorize,
     Colors,
-    Tip
+    Tip,
+    Video
 }

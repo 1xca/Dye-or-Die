@@ -24,7 +24,7 @@ public class Colorpicking : MonoBehaviour
 
     void Update()
     {
-        if(!Pausescreen.IsPaused)
+        if(!Pausescreen.IsPaused && !BetweenLevel.IsBetweenLevels)
         {
             if(Input.GetMouseButtonDown(1) && !IsSlowedDown)
             {

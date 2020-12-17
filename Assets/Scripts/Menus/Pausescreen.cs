@@ -25,7 +25,7 @@ public class Pausescreen : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if(!Colorpicking.IsSlowedDown)
+            if(!Colorpicking.IsSlowedDown && !BetweenLevel.IsBetweenLevels)
             {
                 if(IsPaused){
                     Resume();
